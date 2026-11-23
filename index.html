@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sriya – Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F0F5E6;--ink:#233220;--muted:#56664F;--card:#FFFDF7;--line:#C9D8BA;
+  --moss:#3E6A3A;--link:#2F5A2C;--peony:#E8799B;--lav:#9B87C9;--butter:#F2C94C;--soil:#7A4B2A;--blush:#F7C5D3;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#141E17;--ink:#E7EEDD;--muted:#A5B79B;--card:#1E2B22;--line:#33463A;--moss:#7FB277;--link:#A3D39A;--peony:#F093B0;--lav:#B3A2DB;--butter:#F2CF5E;--soil:#C08A5E;--blush:#4A2E3A;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#141E17;--ink:#E7EEDD;--muted:#A5B79B;--card:#1E2B22;--line:#33463A;--moss:#7FB277;--link:#A3D39A;--peony:#F093B0;--lav:#B3A2DB;--butter:#F2CF5E;--soil:#C08A5E;--blush:#4A2E3A;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--peony);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
+nav .logo{font-family:"Young Serif",Georgia,serif;font-size:1.2rem;text-decoration:none;color:var(--ink)}
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{text-decoration:none;color:var(--muted);font-weight:500}
+nav ul a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--peony);text-underline-offset:6px;text-decoration-thickness:2px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;align-items:end;gap:1rem;padding:3rem 0 0;min-height:30rem}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);letter-spacing:-.01em}
+.hero p{max-width:30rem;color:var(--muted);font-size:1.15rem;margin:1.2rem 0 1.8rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;padding-bottom:3rem}
+.btn{display:inline-block;padding:.75rem 1.4rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--moss)}
+.btn.main{background:var(--moss);color:var(--bg)}
+.btn.ghost{color:var(--ink)}
+.btn:hover{background:var(--peony);border-color:var(--peony);color:#2a1620}
+.garden{width:100%;height:auto;display:block}
+.stem{fill:none;stroke:var(--moss);stroke-width:4;stroke-linecap:round;stroke-dasharray:320;stroke-dashoffset:320;animation:grow 1.6s ease-out forwards;animation-delay:var(--d)}
+.leaf{fill:var(--moss);opacity:.85}
+.bloom{transform-box:fill-box;transform-origin:center;transform:scale(0) rotate(-40deg);animation:open 1.1s cubic-bezier(.2,1.3,.4,1) forwards;animation-delay:calc(var(--d) + 1.1s)}
+@keyframes grow{to{stroke-dashoffset:0}}
+@keyframes open{to{transform:scale(1) rotate(0)}}
+.ground{height:14px;background:var(--moss);border-radius:8px 8px 0 0;opacity:.9}
+section{padding:5rem 0 1rem}
+section>.wrap>h2{font-size:clamp(1.9rem,4vw,2.6rem)}
+.lede{color:var(--muted);max-width:34rem;margin:.6rem 0 2.4rem}
+.about{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center}
+.about svg{width:120px;height:120px;color:var(--lav)}
+.about p{margin:0 0 1rem;max-width:40rem}
+.packets{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1.6rem}
+.packet{background:var(--card);border:2px solid var(--c);border-radius:6px 6px 14px 14px;overflow:hidden;display:flex;flex-direction:column}
+.packet .top{background:var(--c);padding:1rem 1rem .6rem;display:flex;justify-content:space-between;align-items:center;
+  clip-path:polygon(0 0,100% 0,100% 70%,95% 100%,90% 70%,85% 100%,80% 70%,75% 100%,70% 70%,65% 100%,60% 70%,55% 100%,50% 70%,45% 100%,40% 70%,35% 100%,30% 70%,25% 100%,20% 70%,15% 100%,10% 70%,5% 100%,0 70%);padding-bottom:1.3rem}
+.packet .top svg{width:46px;height:46px;color:var(--card)}
+.packet .top span{font-weight:700;font-size:.9rem;color:#1d2a19}
+.packet .body{padding:1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.packet h3{font-size:1.35rem}
+.packet p{margin:0;color:var(--muted);font-size:.98rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto}
+.tag{font-size:.82rem;font-weight:500;padding:.15rem .7rem;border-radius:999px;background:var(--blush);color:var(--ink)}
+.packet a{font-weight:700}
+.vine{position:relative;margin:0;padding:0 0 0 3.2rem;list-style:none}
+.vine::before{content:"";position:absolute;left:1.05rem;top:.5rem;bottom:.5rem;width:4px;border-radius:2px;background:var(--moss);opacity:.7}
+.vine li{position:relative;margin-bottom:2.4rem}
+.vine li svg{position:absolute;left:-3.2rem;top:-.1rem;width:36px;height:36px;color:var(--c)}
+.vine h3{font-size:1.35rem}
+.vine .meta{color:var(--muted);font-size:.95rem;margin:.15rem 0 .5rem}
+.vine ul{margin:0;padding-left:1.1rem;max-width:42rem}
+.vine ul li{margin:0 0 .3rem}
+.vine ul li::marker{color:var(--peony)}
+.beds{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.4rem}
+.bed{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.3rem}
+.bed h3{font-size:1.15rem;margin-bottom:.8rem}
+.bed .tags{margin-top:0}
+.contact{text-align:center;padding:5rem 0 3rem}
+.contact h2{font-size:clamp(2rem,5vw,3rem)}
+.contact p{color:var(--muted);margin:.8rem auto 1.6rem;max-width:30rem}
+.contact .links{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap}
+footer{background:var(--moss);color:var(--bg);text-align:center;padding:1.2rem;font-size:.92rem}
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .btns{padding-bottom:1rem}
+  .about{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .stem{animation:none;stroke-dashoffset:0}
+  .bloom{animation:none;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="bloom" viewBox="-50 -50 100 100">
+      <g fill="currentColor">
+        <ellipse cx="0" cy="-26" rx="14" ry="22"/>
+        <ellipse cx="0" cy="-26" rx="14" ry="22" transform="rotate(60)"/>
+        <ellipse cx="0" cy="-26" rx="14" ry="22" transform="rotate(120)"/>
+        <ellipse cx="0" cy="-26" rx="14" ry="22" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-26" rx="14" ry="22" transform="rotate(240)"/>
+        <ellipse cx="0" cy="-26" rx="14" ry="22" transform="rotate(300)"/>
+      </g>
+      <circle r="11" fill="var(--soil)"/>
+      <circle r="11" fill="none" stroke="var(--butter)" stroke-width="3" stroke-dasharray="2 5"/>
+    </symbol>
+  </defs>
+</svg>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="logo" href="#top">Sriya</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <header class="hero" id="top">
+    <div>
+      <h1>Hi, I’m Sriya! I grow useful things.</h1>
+      <p>Designer and developer building thoughtful websites and apps. Here you’ll find what I’ve made and where I’ve worked.</p>
+      <div class="btns">
+        <a class="btn main" href="#projects">See my projects</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <svg class="garden" viewBox="0 0 600 310" role="img" aria-label="Illustration of flowers growing from the ground">
+      <g>
+        <path class="stem" style="--d:.2s" d="M90 310 C90 260 100 215 96 168"/>
+        <ellipse class="leaf" cx="75" cy="250" rx="22" ry="8" transform="rotate(-30 75 250)"/>
+        <path class="stem" style="--d:.5s" d="M200 310 C205 240 190 175 195 112"/>
+        <ellipse class="leaf" cx="222" cy="230" rx="24" ry="8" transform="rotate(30 222 230)"/>
+        <path class="stem" style="--d:.8s" d="M310 310 C310 270 320 240 316 205"/>
+        <path class="stem" style="--d:.35s" d="M410 310 C405 250 420 200 414 145"/>
+        <ellipse class="leaf" cx="388" cy="245" rx="22" ry="8" transform="rotate(-30 388 245)"/>
+        <path class="stem" style="--d:.65s" d="M510 310 C512 260 500 230 506 192"/>
+      </g>
+      <g class="bloom" style="--d:.2s"><use href="#bloom" x="46" y="118" width="100" height="100" style="color:var(--peony)"/></g>
+      <g class="bloom" style="--d:.5s"><use href="#bloom" x="130" y="32" width="130" height="130" style="color:var(--lav)"/></g>
+      <g class="bloom" style="--d:.8s"><use href="#bloom" x="276" y="165" width="80" height="80" style="color:var(--butter)"/></g>
+      <g class="bloom" style="--d:.35s"><use href="#bloom" x="360" y="80" width="110" height="110" style="color:var(--blush)"/></g>
+      <g class="bloom" style="--d:.65s"><use href="#bloom" x="464" y="148" width="86" height="86" style="color:var(--lav)"/></g>
+    </svg>
+  </header>
+</div>
+<div class="ground"></div>
+<main>
+  <section id="about">
+    <div class="wrap about">
+      <svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#bloom" x="-50" y="-50" width="100" height="100"/></svg>
+      <div>
+        <h2>About me</h2>
+        <p style="margin-top:1rem">I’m a designer and developer who likes turning rough ideas into clear, friendly products. I care about simple interfaces, accessible code, and details people notice without being told.</p>
+        <p>Replace this paragraph with a few sentences about your background, what you’re passionate about, and what you’re looking for next.</p>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="lede">A few things I’ve planted, tended, and shipped.</p>
+      <div class="packets">
+        <article class="packet" style="--c:var(--peony)">
+          <div class="top"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#bloom" x="-50" y="-50" width="100" height="100"/></svg><span>2025</span></div>
+          <div class="body"><h3>Project One</h3><p>A short description of what it is, who it’s for, and the result you achieved.</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">Design</span></div><a href="#">View project</a></div>
+        </article>
+        <article class="packet" style="--c:var(--lav)">
+          <div class="top"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#bloom" x="-50" y="-50" width="100" height="100"/></svg><span>2024</span></div>
+          <div class="body"><h3>Project Two</h3><p>Explain the problem you solved and your role. Mention a number or outcome if you have one.</p>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">API</span></div><a href="#">View project</a></div>
+        </article>
+        <article class="packet" style="--c:var(--butter)">
+          <div class="top"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#bloom" x="-50" y="-50" width="100" height="100"/></svg><span>2023</span></div>
+          <div class="body"><h3>Project Three</h3><p>Describe what you built, the tools you used, and what you learned along the way.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Data</span></div><a href="#">View project</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <p class="lede">Where I’ve worked, newest first.</p>
+      <ul class="vine">
+        <li style="--c:var(--peony)"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#bloom" x="-50" y="-50" width="100" height="100"/></svg>
+          <h3>Senior Role Title</h3><div class="meta">Company Name, 2023 to present</div>
+          <ul><li>Led a project that improved a measurable result by a clear amount.</li><li>Mentored teammates and shaped how the team works.</li></ul></li>
+        <li style="--c:var(--lav)"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#bloom" x="-50" y="-50" width="100" height="100"/></svg>
+          <h3>Role Title</h3><div class="meta">Company Name, 2021 to 2023</div>
+          <ul><li>Built and launched features used by thousands of people.</li><li>Worked with design and product to turn ideas into releases.</li></ul></li>
+        <li style="--c:var(--butter)"><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#bloom" x="-50" y="-50" width="100" height="100"/></svg>
+          <h3>Internship or First Role</h3><div class="meta">Company Name, 2020 to 2021</div>
+          <ul><li>Describe what you learned and contributed.</li></ul></li>
+      </ul>
+    </div>
+  </section>
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="lede">The tools I reach for most.</p>
+      <div class="beds">
+        <div class="bed"><h3>Design</h3><div class="tags"><span class="tag">Figma</span><span class="tag">Prototyping</span><span class="tag">Branding</span></div></div>
+        <div class="bed"><h3>Development</h3><div class="tags"><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">CSS</span></div></div>
+        <div class="bed"><h3>Working together</h3><div class="tags"><span class="tag">Communication</span><span class="tag">Mentoring</span><span class="tag">Planning</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="wrap contact">
+      <h2>Let’s work together</h2>
+      <p>I’m open to new projects and roles. Send a note and I’ll reply soon.</p>
+      <div class="links">
+        <a class="btn main" href="mailto:you@example.com">Email me</a>
+        <a class="btn ghost" href="#">LinkedIn</a>
+        <a class="btn ghost" href="#">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>© 2026 Sriya. Made with care.</footer>
+</body>
+</html>
